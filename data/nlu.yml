@@ -1,0 +1,485 @@
+version: "2.0"
+nlu:
+
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+    
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: thanks
+  examples: |
+    - thanks
+    - thank you
+    - ok
+    - hmm
+    - ok
+    - great
+    - nice
+
+# Book Appointment
+
+- intent: schedule_call
+  examples: |
+    - schedule my call
+    - Schedule a call from me
+    - Make my call scheduled
+    - Schedule a call for me
+    - Schedule a call with me
+    - Schedule the call for me
+    - Schedule my phone call
+    - Plan my call
+
+
+- intent: book_appointment
+  examples: |
+    - Call me Monday at 8 pm
+    - Book an appointment on Wednesday 5 pm
+    - callback on thursday 2 pm
+    - call me today at 3 pm
+    - 2pm today
+    - call me tommorow at 12 am
+    - 2am tommorow
+    - call me on tuesday 4 pm
+    - call me on friday 2 am
+    - call me next monday 3 pm
+    - call me next thursday 4 pm
+    - can you please call me on wed 4pm
+    - can you please call me on thurs 5 pm
+    - can you please call me on mon 2 am
+    - schedule a call for me on tuesday 3 pm
+    - schedule a call on tuesday 2 pm
+
+- intent: reschedule_appointment
+  examples: |
+    - reschedule my call to 12 pm on Tuesday
+    - reschedule it to 23rd of Jan 2021
+    - change it to friday night
+    - change it to wednesday morning
+    - move it ahead to tommorow 5 pm
+    - move it thursday afternoon
+    - reschedule my call at 5 am monday
+    - reschedule on 29th jan
+    - reschedule it to 3rd jan
+    
+- intent: talk_to_someone
+  examples: |
+    - Do i need to talk to someone
+    - Do I need to talk to someone else
+    - Do I have to talk to someone?
+    - Do I need to have a conversation with someone
+    - Do I need to speak to someone about this?
+    - Do I need to talk with someone about it?
+    - Do I need to speak with someone about it?
+    - Do I need to talk with someone about this?
+
+# Closing
+ 
+- intent: closing_1
+  examples: |
+    - how long does it take to close
+    - when will this close
+    - time duration for closure
+    - How long it takes to close 
+    - How long is it going to take to close
+    - How long it takes to close, how long
+
+- intent: closing_2
+  examples: |
+    - why does it take so long to close
+    - why such a long duration
+    - so much time?
+    - can you make it quick?
+    - Why is it taking so long to close
+    - Why is it going to take so long to close
+    - Why does it take so long to close things down
+    - Why is it taking such a long time to close
+
+- intent: closing_3
+  examples: |
+    - what if rate expires before closing
+    - what if i close late
+    - will the rate change
+    - If the rate expires before closing, what if
+    - What if the rate expires prior to closing
+    - What if, before closing, the rate expires
+    - What if before closing, the rate expires
+    - What if the rate expires before it closes
+
+- intent: closing_4
+  examples: |
+    - is escrow required
+    - is escrow essential
+    - what if dont choose escrow
+    - i dont want escrow
+    - Is escrow necessary
+    - Is escrow required for this
+    - Is escrow necessary for this
+    - Is an escrow necessary
+    - Is an escrow needed
+
+- intent: closing_5
+  examples: |
+    - what’s the cost to waive escrow
+    - how much to remove escrow
+    - What's the cost of the escrow waiver
+    - What is the cost of the escrow waiver
+    - What are the costs of waiving escrow
+    - What is the cost of renouncing an escrow
+    - What is the expense of waiving escrow
+    
+- intent: closing_6
+  examples: |
+    - can I waive property inspection for refi
+    - what if i dont want insepection for refi
+    - Can I waive a refi property inspection
+    - Can I waive the Refi property inspection
+    - I can waive the Refi property inspection
+    - May I waive a refi property inspection
+    - Can I waive a refi property inspection
+
+# Company Information
+
+- intent: company_information
+  examples: |
+    - tell me more about your company
+    - what does your company do
+    - some information about your company
+    - Tell me more about your business
+    - Tell me more about your business here
+    - Tell me a little more about your business
+    - Tell me more about your business, please
+    - Tell me more about interfirst
+    - I want to know more about interfirst
+
+- intent: more_info
+  examples: |
+    - where can i find out more
+    - i need more info
+    - Where can I find more details?
+    - Where can I learn more about you?
+    - Where can I learn more about this?
+    - Where can I find more information?
+
+
+- intent: anger_response
+  examples: |
+    - You guys suck
+    - I'm not going to use you
+    - Worst company ever
+    - I want to report
+    - I want to report an issue
+    - Not happy with the service
+    - I'm not happy with your answers
+    - you are wrong
+    - i dislike your service
+    - i dislike you
+    - im going to complaint
+    - i aint happy
+
+
+# Change lender
+
+- intent: change_lender
+  examples: |
+    - Sorry choose another lender
+    - choose another lender
+    - change my lender
+    - switch lender
+    - Choose a different lender
+    - Select a different lender
+    - Pick a different lender
+    - Choose another creditor
+    - Select another lender
+
+# Rates
+
+- intent: rate_update
+  examples: |
+    - How often do you update your rates?
+    - How often do you keep your rates updated?
+    - How much are your rates updated?
+    - How much will your rates be updated?
+    - How often do you change your prices?
+    - How much do you keep your rates updated?
+    - How often are you going to update your rates?
+    - How often do you have to update your rates?
+    - How often do you upgrade your rates?
+    - How many times are you updating your rates?
+
+- intent: rate_cash_out
+  examples: |
+    - Can I get cash out
+    - Can I get some cash out
+    - Can I get cash out of it
+    - Can I get my cash out
+    - Could I get cash out of it?
+
+- intent: rate_3
+  examples: |
+    - Can I negotiate a better rate?
+    - Can I negotiate a rate that's better?
+    - May I get a better rate negotiated?
+    - Can I negotiate a rate that is better?
+    - Am I able to negotiate a better rate?
+    - Will I be able to negotiate a better rate?
+    - May I negotiate a better rate, please?
+    - Can I negotiate a better rate for that?
+    - Can I negotiate a lower rate?
+    - Can I negotiate a better rate, please?
+
+- intent: rate_4
+  examples: |
+    - Can I buy down the rate?
+    - Can I get the rate down?
+    - Can I get my rate down?
+    - May I purchase a rate down?
+    - Can I buy a rate down there?
+    - Can I get the rate down?
+    - May I buy the rate down?
+    - Can I buy the price down?
+    - Can I buy the rate down, please?
+
+- intent: rate_5
+  examples: |
+    - how long is rate locked for?
+    - How long is the rate locked?
+    - How long will the rate be locked for?
+    - How long has the rate been locked for?
+    - How long is the rate locked up for?
+    - How long has the rate locked for?
+    - How long will the rate be locked down?
+    - How long does the rate stay locked for?
+    - How long does the rate stay locked?
+
+- intent: rate_6
+  examples: |
+    - How do you price your loans?
+    - How are your loans priced?
+    - How are your borrowings priced?
+    - How are you pricing your borrowings?
+    - How are you pricing out your loans?
+    - How are you selling your credits?
+    - How do you get the price of your loans?
+    - How do you get a price for your loans?
+    - How are you going to price your loans?
+
+- intent: rate_7
+  examples: |
+    - I want to know about rates
+    - I just want to know about the rates
+    - I would like to know about the rates
+    - I want to know about the rate
+    - I want to know about the tariffs
+    - I would like to know about rates
+    - I would like to know about prices
+    - I want to know the costs
+    - I want to know the rates
+
+- intent: rate_8
+  examples: |
+    - Show me a plan for 30 years
+    - Show me a plan for 20 years
+    - show me a plan for 25 years
+    - Show me a plan for 15 years
+    - Show me a plan for 10 years
+    - Show me a plan for 40 years
+    - 20
+    - 30
+    - 10
+    - 15
+    - 40
+    - 25
+    
+#Products
+
+- intent: products_1
+  examples: |
+    - Do you do second homes?
+    - Do you deal in second homes?
+    - Are you making second homes?
+    - Are you making some second homes?
+    - Are you doing second homes, right?
+    - Are you doing 2nd homes?
+
+- intent: products_2
+  examples: |
+    - Do you offer cashout refi
+    - do you deal in cashout refi
+    - Do you offer a refi cashout?
+    - Do you offer refi cashout
+    - Do you offer refi cashouts?
+
+- intent: products_3
+  examples: |
+    - Do you do short-term mortgages?
+    - Do you deal in short-term mortgages?
+    - Are you dealing with short-term mortgages?
+    - Are you offering short-term mortgages?
+    - Are you creating short-term mortgages?
+    - Do you make mortgages for the short-term?
+    - Do you make mortgages for short-term purposes?
+
+- intent: products_4
+  examples: |
+    - Can you do investment properties?
+    - Do you deal in investment properties?
+    - Can you make real estate investments?
+    - Can you make investments in real estate?
+    - Can you make investments in property?
+    - Could you make investments in property?
+    - Can you make a property investment?
+
+- intent: products_5
+  examples: |
+    - Do you have ARM rates?
+    - Do you deal in ARM rates?
+    - Do you have rates for ARM?
+    - Have you got ARM rates?
+    - Have you got any ARM rates?
+    - You got the ARM rates?
+
+- intent: products_6
+  examples: |
+    - Do you offer FHA offers
+    - Do you deal in FHA offers?
+    - Do you offer FHA deals?
+    - You are offering FHA offers
+    - Do you provide FHA offers?
+    - Do you offer FHA services?
+    - Do you offer FHA bids?
+
+- intent: products_7
+  examples: |
+    - Do you have VA loans
+    - Do you deal in VA loans
+    - Do you offer VA loans
+    - Do you have VA loans for that?
+    - Do you have VA loans for this?
+    - You have VA loans, do you?
+
+- intent: products_8
+  examples: |
+    - Do you have jumbo loans
+    - Do you deal in jumbo loans
+    - Have you got a jumbo loan?
+    - You have jumbo loans, do you?
+    - Do you have jumbo loans as well?
+
+- intent: products_9
+  examples: |
+    - Do you offer personal loans
+    - Do you offer loans that are personal?
+    - You're offering personal loans 
+    - Do you offer loans for personal use? 
+    - Do you make personal loans available?
+
+# Fees
+
+- intent: fees_1
+  examples: |
+    - How much are your fees?
+    - How many are the fees?
+    - How much do your fees cost?
+    - How many payments are there for you?
+    - How much do your fees charge?
+    - How much does your fee cost?
+    - How much do your fees cost?
+
+- intent: fees_2
+  examples: |
+    - you don’t charge any fees? How is that possible?
+    - Don't you owe fees? How will it be possible? 
+    - Don't you owe fees?
+    - you dont charge any fees?
+    - Don't you charge fees at all?
+    - Aren't you charging any fees?
+    - Aren't you charging any fees?
+    - You're not charging any fees?
+    - You are not charging any fees?
+    - You will not charge any fees?
+
+- intent: fees_3
+  examples: |
+    - Are there any closing fees or third party fees?
+    - Any closure fees or third-party fees exist
+    - Any closure fees or third party fees exist ?
+    - There are any closing or third-party charges ?
+    - Any closure fees or fees from third parties exist ?
+    - Are there any termination costs or fees for third parties?
+    - Are there any closing fees or fees from third parties?
+    - Are there any closing fees or fees of third parties?
+    - Are there any closing fees or fees to third parties?
+
+- intent: give_feedback
+  examples: |
+    - Give feedback
+    - Feedback to Give
+    - Giving feedback
+    - Provide feedback
+    - Give your feedback
+    - Please give feedback
+    - Give feedback, please
+
+- intent: bot_capabilities
+  examples: |
+    - What can you do ?
+    - What are you able to do?
+    - What are you capable of doing?
+    - And what can you do?
+    - What could you do
+    - What are the things i can ask you?
+    - WHat can I ask you?
+    - Ask for further options
+
+

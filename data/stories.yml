@@ -1,0 +1,41 @@
+version: "2.0"
+
+stories:
+
+- story: angry user path 1
+  steps:
+  - intent: anger_response
+  - action: utter_anger_response
+  - intent: affirm
+  - action: feedback_form
+  - action: actions_feedback
+  - action: feedback_form
+  - active_loop: feedback_form
+  - active_loop: null 
+  - action: utter_angry_path1
+  
+
+- story: angry user path 2
+  steps:
+  - intent: anger_response
+  - action: utter_anger_response
+  - intent: deny
+  - action: utter_rate_call_2
+
+
+- story: cashing out rate path 1
+  steps:
+  - intent: rate_cash_out
+  - action: utter_rate_cash_out
+  - intent: affirm
+  - action: utter_rate_call_1
+  - intent: book_appointment
+  - action: action_book_appointment
+  - action: utter_any_question
+
+- story: cashing out rate path 2
+  steps:
+  - intent: rate_cash_out
+  - action: utter_rate_cash_out
+  - intent: deny
+  - action: utter_rate_call_2

@@ -1,0 +1,250 @@
+version: "2.0"
+
+rules:
+
+  # - rule: welcome user
+  #   conversation_start: true  # this rule only applies at the beginning of a conversation
+  #   steps:
+  #   - intent: greet
+  #   - action: utter_greet
+    
+  - rule: say hi everytime user says hi
+    steps:
+    - intent: greet
+    - action: utter_greet
+    # - action: utter_bot_capabilities
+    
+  - rule: Say goodbye anytime the user says goodbye
+    steps:
+    - intent: goodbye
+    - action: utter_goodbye
+
+  - rule: Response with more options
+    steps:
+    - intent: thanks
+    - action: utter_thanks
+
+  - rule: Say 'I am a bot' anytime the user challenges
+    steps:
+    - intent: bot_challenge
+    - action: utter_iamabot
+
+
+  # - rule: Implementation of the Two-Stage-Fallback
+  #   steps:
+  #   - intent: nlu_fallback
+  #   - action: action_two_stage_fallback
+  #   - active_loop: action_two_stage_fallback
+
+
+  - rule: Ask the user to rephrase whenever they send a message with low NLU confidence
+    steps:
+    - intent: nlu_fallback
+    - action: utter_please_rephrase
+# Booking appointment
+
+  - rule: scheduling call with user
+    steps:
+    - intent: schedule_call
+    - action: utter_rate_call_1
+
+  - rule: Book appointment whenever user asks to call
+    steps:
+    - intent: book_appointment
+    - action: action_book_appointment
+    - action: utter_any_question
+
+  - rule: Reschedule Appointment
+    steps: 
+    - intent: reschedule_appointment
+    - action: action_book_appointment
+    - action: utter_any_question
+  
+  - rule: Give company information whenever asked
+    steps:
+    - intent: company_information
+    - action: utter_company_information
+
+  - rule: Send basic links and about us
+    steps:
+    - intent: more_info
+    - action: utter_more_info
+  
+  - rule: Talk to someone
+    steps:
+    - intent: talk_to_someone
+    - action: utter_talk_someone
+  
+#Closing
+  - rule: Closing_1
+    steps:
+    - intent: closing_1
+    - action: utter_closing_1
+
+  - rule: Closing_2
+    steps:
+    - intent: closing_2
+    - action: utter_closing_2
+
+  - rule: Closing_3
+    steps:
+    - intent: closing_3
+    - action: utter_closing_3
+
+  - rule: Closing_4
+    steps:
+    - intent: closing_4
+    - action: utter_closing_4
+
+  - rule: Closing_5
+    steps:
+    - intent: closing_5
+    - action: utter_closing_5
+
+  - rule: Closing_6
+    steps:
+    - intent: closing_6
+    - action: utter_closing_6
+
+#Products
+  - rule: Products_1
+    steps:
+    - intent: products_1
+    - action: utter_products_1
+
+  - rule: Products_2
+    steps:
+    - intent: products_2
+    - action: utter_products_2
+
+  - rule: Products_3
+    steps:
+    - intent: products_3
+    - action: utter_products_3
+
+  - rule: Products_4
+    steps:
+    - intent: products_4
+    - action: utter_products_4
+
+  - rule: Products_5
+    steps:
+    - intent: products_5
+    - action: utter_products_5
+
+  - rule: Products_6
+    steps:
+    - intent: products_6
+    - action: utter_products_6
+
+  - rule: Products_7
+    steps:
+    - intent: products_7
+    - action: utter_products_7
+
+  - rule: Products_8
+    steps:
+    - intent: products_8
+    - action: utter_products_8
+  
+  - rule: Products_9
+    steps:
+    - intent: products_9
+    - action: utter_products_9
+
+# Choose another lender
+
+  - rule: Choose another Lender
+    steps:
+    - intent: change_lender
+    - action: utter_change_lender
+
+# Rates
+
+  - rule: Update the rates
+    steps:
+    - intent: rate_update
+    - action: utter_rate_update
+
+  - rule: Rate 3
+    steps:
+    - intent: rate_3
+    - action: utter_rate_3
+
+  - rule: Rate 4
+    steps:
+    - intent: rate_4
+    - action: utter_rate_4
+
+  - rule: Rate 5
+    steps:
+    - intent: rate_5
+    - action: utter_rate_5
+
+  - rule: Rule 6
+    steps:
+    - intent: rate_6
+    - action: utter_rate_6
+
+  - rule: User wants to know about rates
+    steps:
+    - intent: rate_7
+    - action: utter_rate_7
+
+  - rule: Show a plan
+    steps:
+    - intent: rate_8
+    - action: action_rate
+
+  - rule: cashing out rate
+    steps:
+    - intent: rate_cash_out
+    - action: utter_rate_cash_out
+# fees
+
+  - rule: Fees 1
+    steps:
+    - intent: fees_1
+    - action: utter_fees_1
+
+  - rule: Fees 2
+    steps:
+    - intent: fees_2
+    - action: utter_fees_2
+
+  - rule: Fees 3
+    steps:
+    - intent: fees_3
+    - action: action_fees_3
+
+# Feedback
+
+  - rule: Activate feedback form
+    steps: 
+      - intent: give_feedback
+      - action: feedback_form
+      - active_loop: feedback_form
+
+  - rule: Submit Form
+    condition:
+    - active_loop: feedback_form
+    steps:
+      - action: feedback_form
+      - active_loop: null
+      - action: utter_angry_path1
+
+  - rule: angry user 
+    steps:
+    - intent: anger_response
+    - action: utter_anger_response
+
+  - rule: deny
+    steps:
+    - intent: deny
+    - action: utter_rate_call_2
+
+# Bot capabilities
+  - rule: Give user list of options when asked
+    steps:
+    - intent: bot_capabilities
+    # - action: utter_bot_capabilities

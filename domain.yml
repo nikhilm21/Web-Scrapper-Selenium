@@ -1,0 +1,259 @@
+version: '2.0'
+config:
+  store_entities_as_slots: true
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet:
+    use_entities: true
+- goodbye:
+    use_entities: true
+- affirm:
+    use_entities: true
+- deny:
+    use_entities: true
+- mood_great:
+    use_entities: true
+- mood_unhappy:
+    use_entities: true
+- bot_challenge:
+    use_entities: true
+- closing_1:
+    use_entities: true
+- closing_2:
+    use_entities: true
+- closing_3:
+    use_entities: true
+- closing_4:
+    use_entities: true
+- closing_5:
+    use_entities: true
+- closing_6:
+    use_entities: true
+- products_1:
+    use_entities: true
+- products_2:
+    use_entities: true
+- products_3:
+    use_entities: true
+- products_4:
+    use_entities: true
+- products_5:
+    use_entities: true
+- products_6:
+    use_entities: true
+- products_7:
+    use_entities: true
+- products_8:
+    use_entities: true
+- products_9:
+    use_entities: true
+- company_information:
+    use_entities: true
+- more_info:
+    use_entities: true
+- anger_response:
+    use_entities: true
+- thanks:
+    use_entities: true
+- change_lender:
+    use_entities: true
+- book_appointment:
+    use_entities: true
+- reschedule_appointment:
+    use_entities: true
+- rate_update:
+    use_entities: true
+- rate_cash_out:
+    use_entities: true
+- rate_3:
+    use_entities: true
+- rate_4:
+    use_entities: true
+- rate_5:
+    use_entities: true
+- rate_6:
+    use_entities: true
+- rate_7:
+    use_entities: true
+- rate_8:
+    use_entities: true
+- fees_1:
+    use_entities: true
+- fees_2:
+    use_entities: true
+- fees_3:
+    use_entities: true
+- give_feedback:
+    use_entities: true
+- bot_capabilities:
+    use_entities: true
+- schedule_call:
+    use_entities: true
+- nlu_fallback:
+    use_entities: true
+- talk_to_someone:
+    use_entities: true
+entities:
+- feed
+- time
+- number
+slots:
+  feed:
+    type: rasa.shared.core.slots.AnySlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+  time:
+    type: rasa.shared.core.slots.AnySlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+  number:
+    type: rasa.shared.core.slots.AnySlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+responses:
+  utter_greet:
+  - text: Hey, how may I help you?
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_iamabot:
+  - text: I am a bot, powered by Interfirst.
+  utter_welcome:
+  - text: Hope that helped you :)
+  utter_angry_path1:
+  - text: Thank you for your feedback, we will get onto it to provide you the best service possible
+  utter_angry_path2:
+  - text: Ok, we are extremely sorry, Hope we have another chance to provide a better experience in the future.
+  utter_dissatisfied:
+  - text: I recommend you talk with one of our home loan advisors who will personally answer your questions. Can I set up a phone appointment for you?
+  utter_goodbye:
+  - text: Hope we solved your problem, Have a good day
+  utter_thanks:
+  - buttons:
+    - payload: Ask for further options
+      title: Yes
+    - payload: Goodbye
+      title: No
+    text: Is there anything else i can assist you with?
+  utter_ask_feed:
+  - text: please provide your valuable feedback
+  utter_slots_values:
+  - text: |-
+      please check the value and confirm 
+       - feedback: {feed}
+  utter_closing_1:
+  - text: |-
+      For a typical refinance our average closing is 6 to 8 weeks. We know how important your
+       time is, so we do our best to keep things moving fast to closing. 
+       you can help by staying on top of uploading your docs as they're requested.
+  utter_closing_2:
+  - text: |-
+      There are many factors outside our control, including third parties,
+       but we do our best to streamline the process for you. FYI, the national average is 10 to 12 weeks.
+  utter_closing_3:
+  - text: |-
+      If we go over the 60 day rate lock deadline, we will extend the rate at no charge.
+       you can help by staying on top of uploading your docs as they're requested
+  utter_closing_4:
+  - text: Escrow is optional for all loans under 80% Loan-to-value (LTV)
+  utter_closing_5:
+  - text: We waive the escrow as long as your loan is below 80% Loan-to-value (LTV), but you cannot waive escrows if the LTV is over 80%.
+  utter_closing_6:
+  - text: |-
+      Good question. Inspection waivers are decided by Fannie May and Freddie Mac, which is outside of our control. We can answer your
+       question only after your application is completed and we have received all required documents.
+  utter_products_1:
+  - text: Yes we offer second homes. Ready to apply? Just go to our free online application at <link> to get our best rate. It only takes 5-10 minutes
+  utter_products_2:
+  - text: Yes we offer cash out options. Ready to apply? Just go to our free online application at <link> to get our best rate. It only takes 5-10 minutes.
+  utter_products_3:
+  - text: Yes. fixed, short-term and cash out options. Ready to apply? Just go to our free online application at <link> to get our best rate. It only takes 5-10 minutes.
+  utter_products_4:
+  - text: Yes, we do
+  utter_products_5:
+  - text: At this time we do not offer ARM loans, only fixed, and cash out options. But check back with us soon.
+  utter_products_6:
+  - text: At this time we do not offer FHA loans, only fixed, short-term and cash out options. But check back with us soon.
+  utter_products_7:
+  - text: At this time we do not offer VA loans, only fixed, short-term and cash out options. But check back with us soon.
+  utter_products_8:
+  - text: At this time we do not offer Jumbo loans. But check back with us soon.
+  utter_products_9:
+  - text: At this time we do not. But check back with us soon.
+  utter_company_information:
+  - text: |-
+      Interfirst has been serving homeowners since 2001, with over $36B loans locked. A+ Rating with BBB and 4.4 score on Google reviews.
+       We offer zero points, zero origination fees, zero application fees or commissions for all our Fixed Rate, Short Term, Cash Out options. 
+  utter_more_info:
+  - text: You can visit interfirst.com and see links to BBB and About us in the footer
+  utter_anger_response:
+  - buttons:
+    - payload: Give Feedback
+      title: Yes
+    - payload: No
+      title: No
+    text: Can I ask what happened that you made you feel so?
+  utter_change_lender:
+  - text: |-
+      I understand. Keep in mind we can look over your current offer from another lender for free to make sure you are not getting hit with any sneaky fees or surprises.
+       We like helping people get the best deal and save the most money with their mortgage financing...even if it's not our firm! 
+  utter_confirm:
+  - text: |-
+      Ok you will recieve call on the scheduled time,
+       If you want to change the time or date type reschedule with the updated date and time
+  utter_any_question:
+  - text: If you have any questions regarding our service, please feel free to ask me
+  utter_please_rephrase:
+  - text: I'm sorry, I didn't quite understand that. Could you rephrase?
+  utter_rate_update:
+  - text: We update our rates every business day, depending on the market.
+  utter_rate_cash_out:
+  - buttons:
+    - payload: Schedule my call
+      title: Yes
+    - payload: No
+      title: No
+    text: Depends on many factors, including the amount of your loan vs the value of your home. Let's see what we can do. Can I set up a personal phone appointment for you?
+  utter_rate_call_1:
+  - text: Ok, when can we schedule the call?
+  utter_rate_call_2:
+  - text: Okay, you can still ask me more question regarding our services
+  utter_rate_3:
+  - text: Our rates cannot be adjusted by paying points or receiving lender credits, in part because we do not charge you fees or points as a benefit.
+  utter_rate_4:
+  - text: No, our rates cannot be adjusted by paying points or receiving lender credits, in part because we do not charge you fees or points as a benefit.
+  utter_rate_5:
+  - text: Rates are locked for 60 days
+  utter_rate_6:
+  - text: We offer common sense pricing.  One price for all.  We lock your rate for 60 days and unlike other lenders we don't charge add ons for waiving escrows or extending your rate.
+  utter_rate_7:
+  - buttons:
+    - payload: Show me a plan for 15 years
+      title: '15'
+    - payload: Show me a plan for 20 years
+      title: '20'
+    - payload: Show me a plan for 25 years
+      title: '25'
+    - payload: Show me a plan for 30 years
+      title: '30'
+    text: What rate plan are you looking for?
+  utter_fees_1:
+  - text: Zero! There are no sneaky fees when you apply for a mortgage at Interfirst. Zero application fees, zero lender fees and no points.
+  utter_fees_2:
+  - text: Our focus on the best online experience possible, using technology to streamline your mortgage process, means we avoid all the overhead and pass all the savings on to you.
+  utter_talk_someone:
+  - text: Well, not if you don't want to and if you complete our online application and provide all required documents. The reason for a personal conversation is so that we can discuss your options and pick the one that best serves your financial goals.
+actions:
+- actions_feedback
+- action_book_appointment
+- feedback_form
+- action_fees_3
+- action_rate
+- action_reset_all_slots
+forms:
+  feedback_form: null
+e2e_actions: []
